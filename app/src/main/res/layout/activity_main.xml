@@ -15,50 +15,80 @@
         <RelativeLayout
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="58dp"
             android:background="#63B8FF">
 
             <ImageView
                 android:id="@+id/leftmenu"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:padding="12dp"
                 android:src="@drawable/robot" />
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_height="58dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Title Bar" />
             <ImageView
                 android:id="@+id/rightmenu"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
                 android:layout_alignParentRight="true"
                 android:padding="12dp"
                 android:src="@drawable/robot" />
         </RelativeLayout>
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/title_bar"
-            android:orientation="vertical">
+            android:layout_below="@id/title_bar">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="hello world!"
                 android:textColor="#000000"
-                android:textSize="20dp"/>
-        </LinearLayout>
+                android:textSize="30dp"
+                android:layout_centerVertical="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:layout_alignParentBottom="true">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="首页"
+                    android:textSize="20dp"
+                    android:textColor="#000000" />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/robot"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="消息"
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </RelativeLayout>
 
 
 
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/left_acvtivity"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity = "left"
         android:background="#f2f3f9">
