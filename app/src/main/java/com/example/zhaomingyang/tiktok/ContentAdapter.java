@@ -13,17 +13,12 @@ import com.example.zhaomingyang.tiktok.ContentAdapter;
 import java.util.List;
 
 public class ContentAdapter extends BaseAdapter {
-
     private Context context;
     private List<ContentModel> list;
     public ContentAdapter(Context context, List<ContentModel> list) {
-
         super();
-
         this.context = context;
-
         this.list = list;
-
     }
 
 
@@ -31,15 +26,10 @@ public class ContentAdapter extends BaseAdapter {
     @Override
 
     public int getCount() {
-
         if (list != null) {
-
             return list.size();
-
         }
-
         return 0;
-
     }
 
 
@@ -47,77 +37,45 @@ public class ContentAdapter extends BaseAdapter {
     @Override
 
     public Object getItem(int position) {
-
         if (list != null) {
-
             return list.get(position);
-
         }
-
         return null;
-
     }
 
 
-
     @Override
-
     public long getItemId(int position) {
-
         return list.get(position).getId();
-
     }
 
 
-
     @Override
-
     public View getView(int position, View convertView, ViewGroup parent) {
-
         ViewHold hold;
-
         if (convertView == null) {
-
             hold = new ViewHold();
-
-            convertView = LayoutInflater.from(context).inflate(
-
-                    R.layout.item_menu, null);
-
+            convertView = LayoutInflater.from(context).inflate(R.layout.item_menu, null);
             convertView.setTag(hold);
-
         } else {
-
             hold = (ViewHold) convertView.getTag();
-
         }
 
 
 
-        hold.imageView = (ImageView) convertView
-
-                .findViewById(R.id.item_imageview);
-
+        hold.imageView = (ImageView) convertView.findViewById(R.id.item_imageview);
         hold.textView = (TextView) convertView.findViewById(R.id.item_textview);
 
-
-
         hold.imageView.setImageResource(list.get(position).getImageView());
-
         hold.textView.setText(list.get(position).getText());
-
         return convertView;
-
     }
 
 
 
     class ViewHold {
-
         public ImageView imageView;
-
         public TextView textView;
-
     }
 
 
