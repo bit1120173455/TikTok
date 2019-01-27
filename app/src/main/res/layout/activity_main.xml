@@ -16,17 +16,18 @@
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="58dp"
-            android:background="#63B8FF">
+            android:background="#c1c1ba">
 
             <ImageView
                 android:id="@+id/leftmenu"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
                 android:padding="12dp"
-                android:src="@drawable/robot" />
+                android:src="@drawable/user" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="58dp"
+                android:layout_height="90dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Title Bar"
@@ -38,19 +39,13 @@
                 android:layout_height="58dp"
                 android:layout_alignParentRight="true"
                 android:padding="12dp"
-                android:src="@drawable/robot" />
+                android:src="@drawable/setting1" />
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/title_bar">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -100,20 +95,17 @@
                 android:layout_height="match_parent" />
         </RelativeLayout>
 
-
-
-    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/left_acvtivity"
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity = "left"
-        android:background="#f2f3f9">
+        android:background="#c1c1ba">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#ef78c29b"
+            android:background="#BFBFBF"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -123,7 +115,7 @@
                     android:id="@+id/image_leftmenu"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/robot"/>
+                    android:src="@drawable/tiktok"/>
                 <TextView
                     android:id="@+id/text_leftmenu"
                     android:layout_width="wrap_content"
@@ -136,7 +128,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="这是一款神奇的软件"
+                android:gravity="center"
+                android:text="This is Where amazing happens"
                 android:textColor="#000000"
                 android:textSize="18dp"/>
         </LinearLayout>

@@ -85,15 +85,15 @@ public class MainActivity extends AppCompatActivity {
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.robot,"我们", 1));
+        list.add(new ContentModel(R.drawable.people,"我们", 1));
 
-        list.add(new ContentModel(R.drawable.robot,"订阅", 2));
+        list.add(new ContentModel(R.drawable.like,"收藏", 2));
 
-        list.add(new ContentModel( R.drawable.robot,"收藏", 3));
+        list.add(new ContentModel( R.drawable.love,"订阅", 3));
 
-        list.add(new ContentModel(R.drawable.robot, "投票", 4));
+        list.add(new ContentModel(R.drawable.post, "转发", 4));
 
-        list.add(new ContentModel(R.drawable.robot, "历史", 4));
+        list.add(new ContentModel(R.drawable.history, "历史", 4));
 
     }
     public void initRightData() {
