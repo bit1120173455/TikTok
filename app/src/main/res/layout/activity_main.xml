@@ -29,7 +29,9 @@
                 android:layout_height="58dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="Title Bar" />
+                android:text="Title Bar"
+                android:textSize="18dp"
+                android:textColor="#000000"/>
             <ImageView
                 android:id="@+id/rightmenu"
                 android:layout_width="58dp"
@@ -103,7 +105,7 @@
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/left_acvtivity"
-        android:layout_width="300dp"
+        android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity = "left"
         android:background="#f2f3f9">

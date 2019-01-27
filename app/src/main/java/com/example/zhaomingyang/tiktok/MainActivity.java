@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void initLeftData() {
+    public void initLeftData() {
 
         list = new ArrayList<ContentModel>();
 
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new ContentModel(R.drawable.robot, "历史", 4));
 
     }
-    private void initRightData() {
+    public void initRightData() {
 
         list = new ArrayList<ContentModel>();
 
