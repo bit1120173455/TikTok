@@ -54,7 +54,7 @@
                     tools:textColor="#ffffff"
                     tools:textSize="18dp" />
                 <LinearLayout
-                    android:background="#000000"
+                    android:background="#c1c1b1"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_alignParentBottom="true"
@@ -76,7 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/add_video" />
+                        android:src="@drawable/plus1" />
 
                     <TextView
                         android:id="@+id/tv_messages"
@@ -100,21 +100,21 @@
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity = "left"
-        android:background="#c1c1ba">
+        android:background="#fb55ae6e">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="150dp"
             android:background="#BFBFBF"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="90dp"
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/image_leftmenu"
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/tiktok"/>
                 <TextView
                     android:id="@+id/text_leftmenu"

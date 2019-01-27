@@ -21,14 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="68dp"
             android:layout_alignParentTop="true"
-            android:background="#63B8FF">
+            android:background="#c1c1ba">
 
             <ImageView
                 android:id="@+id/leftmenu_message"
                 android:layout_width="58dp"
                 android:layout_height="58dp"
                 android:padding="12dp"
-                android:src="@drawable/robot" />
+                android:src="@drawable/user" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="58dp"
@@ -43,10 +43,10 @@
                 android:layout_height="58dp"
                 android:layout_alignParentRight="true"
                 android:padding="12dp"
-                android:src="@drawable/robot" />
+                android:src="@drawable/setting1" />
         </RelativeLayout>
         <LinearLayout
-            android:background="#000000"
+            android:background="#c1c1ba"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/add_video" />
+                android:src="@drawable/plus1" />
 
             <TextView
                 android:layout_width="0dp"
@@ -102,7 +102,7 @@
                     android:id="@+id/image_leftmenu"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/robot"/>
+                    android:src="@drawable/tiktok"/>
                 <TextView
                     android:id="@+id/text_leftmenu"
                     android:layout_width="wrap_content"
