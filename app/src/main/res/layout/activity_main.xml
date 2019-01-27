@@ -46,7 +46,7 @@
             android:layout_height="match_parent"
             android:layout_below="@id/title_bar">
 
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="hello world!"
@@ -87,11 +87,59 @@
                     android:textColor="#000000"
                     android:gravity="center"/>
             </LinearLayout>
+=======
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="HelloWorld!"
+                    tools:textColor="#ffffff"
+                    tools:textSize="18dp" />
+                <LinearLayout
+                    android:background="#000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="首页"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_add_video"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/add_video" />
+
+                    <TextView
+                        android:id="@+id/tv_messages"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="消息"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
-
-
-    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/left_acvtivity"
         android:layout_width="300dp"

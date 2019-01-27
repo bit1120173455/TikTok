@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +30,22 @@ public class MainActivity extends AppCompatActivity {
     ContentAdapter adapter;
     List<ContentModel> list;
     DrawerLayout drawerLayout;
+    private TextView tv_messages;
+
 //    ImageView leftMenu;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        tv_messages = findViewById(R.id.tv_messages);
+
+        tv_messages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, MessageActivity.class));
+            }
+        });
 
         //左菜单
         ListView listView = (ListView)findViewById(R.id.list_left_view);
