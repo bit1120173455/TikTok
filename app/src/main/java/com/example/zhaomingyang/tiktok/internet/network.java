@@ -1,7 +1,6 @@
 package com.example.zhaomingyang.tiktok.internet;
 
 import android.content.Context;
-import android.database.DatabaseUtils;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,13 +22,12 @@ public class network {
 
     private static String BASE_URL="http://10.108.10.39:8080";
     private static String TAG=new String();
-    private static String msg=new String();
     private static List<Feed> feeds=new ArrayList<>();
     private static String STUDENT_ID="1120173598";
     private static String USER_NAME="ZGZ";
-    private static String IMG_NAME="name";
+    private static String IMG_NAME="cover_image";
     private static String IMGUrl="url";
-    private static String VIDEO_NAME="url";
+    private static String VIDEO_NAME="video";
     private static List<Feed> items=new ArrayList<>();
     public static void fetchFeed(final RecyclerView rv){
         Retrofit retrofit =new Retrofit.Builder()
