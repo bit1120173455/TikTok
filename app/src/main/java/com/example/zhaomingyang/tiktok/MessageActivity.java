@@ -52,6 +52,7 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
             }
         });
 
+
         tv_main = findViewById(R.id.tv_main);
         tv_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,7 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
 
             }
         });
+
         ListView listView2 = (ListView)findViewById(R.id.list_right_view_message);
         initRightData();
         adapter = new ContentAdapter(this,list);
@@ -147,18 +149,18 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
 
         list.add(new ContentModel(R.drawable.post, "转发", 4));
 
-        list.add(new ContentModel(R.drawable.history, "历史", 4));
+        list.add(new ContentModel(R.drawable.history, "历史", 5));
 
     }
     public void initRightData() {
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.people, "储存权限", 1));
+        list.add(new ContentModel(R.drawable.save, "储存权限", 6));
 
-        list.add(new ContentModel( R.drawable.love,"相机权限", 2));
+        list.add(new ContentModel( R.drawable.video,"相机权限", 7));
 
-        list.add(new ContentModel( R.drawable.like,"收藏", 3));
+        list.add(new ContentModel( R.drawable.audio,"录音机权限", 8));
 
     }
 

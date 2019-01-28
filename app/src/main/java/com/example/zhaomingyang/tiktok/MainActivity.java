@@ -206,11 +206,11 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.people, "储存权限", 1));
+        list.add(new ContentModel(R.drawable.save, "储存权限", 6));
 
-        list.add(new ContentModel( R.drawable.love,"相机权限", 2));
+        list.add(new ContentModel( R.drawable.video,"相机权限", 7));
 
-        list.add(new ContentModel( R.drawable.like,"录音机权限", 3));
+        list.add(new ContentModel( R.drawable.audio,"录音机权限", 8));
 
 
     }
