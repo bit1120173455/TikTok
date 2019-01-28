@@ -48,6 +48,7 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
             public void onClick(View v) {
                 Intent intent = new Intent(MessageActivity.this,RecordVideoActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -56,6 +57,7 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MessageActivity.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -152,13 +154,11 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.people, "我们", 1));
+        list.add(new ContentModel(R.drawable.people, "储存权限", 1));
 
-        list.add(new ContentModel( R.drawable.love,"订阅", 2));
+        list.add(new ContentModel( R.drawable.love,"相机权限", 2));
 
         list.add(new ContentModel( R.drawable.like,"收藏", 3));
-
-        list.add(new ContentModel(R.drawable.post, "转发", 4));
 
     }
 

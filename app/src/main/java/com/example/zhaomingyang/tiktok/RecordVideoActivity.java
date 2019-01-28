@@ -86,6 +86,27 @@ public class RecordVideoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_video);
 
+
+        //////
+        Button button_main=(Button) findViewById(R.id.tv_main_video);
+        button_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecordVideoActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        Button button_message=(Button) findViewById(R.id.message_video);
+        button_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecordVideoActivity.this,MessageActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
      //post
     mBtn = (Button)findViewById(R.id.button_post_it);
     mBtn.setOnClickListener(new View.OnClickListener() {
@@ -136,9 +157,6 @@ public class RecordVideoActivity extends AppCompatActivity {
             videoView.setVideoURI(videoUri);
             videoView.start();
         } else if (resultCode == RESULT_OK && null != data) {
-
-
-
             if (requestCode == PICK_IMAGE) {
 
                 mSelectedImage = data.getData();

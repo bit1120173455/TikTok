@@ -1,24 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
 
         <VideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150dp"
             android:layout_centerHorizontal="true"
-            android:background="#ffffff"/>
+            android:background="#ffffff" />
+
+        <Button
+            android:id="@+id/tv_main_video"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/video_view"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="首页"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/button_post_it"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/tv_main_video"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="#ffffff"
             android:text="select an image"
-            android:textSize="10dp"
-            android:background="#1d30c1"/>
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/message_video"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_post_it"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="消息"
+            android:textSize="20dp" />
+
 
 </RelativeLayout>
