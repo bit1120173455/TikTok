@@ -25,12 +25,6 @@
 
             android:scaleType="centerCrop"
             android:src="@drawable/icon_girl" />
-
-        <ImageView
-            android:id="@+id/robot_notice"
-            style="@style/IMVerifyBdage"
-            android:contentDescription="TODO"
-            tools:visibility="visible" />
     </FrameLayout>
 
 

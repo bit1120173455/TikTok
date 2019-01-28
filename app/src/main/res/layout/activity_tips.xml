@@ -59,8 +59,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center_vertical"
                 android:text="首页"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="20dp" />
 
             <ImageView
@@ -68,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/plus1" />
 
             <TextView
@@ -76,8 +77,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:layout_gravity="center_vertical"
                 android:text="消息"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="20dp" />
         </LinearLayout>
     </RelativeLayout>
@@ -87,21 +89,20 @@
         android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity = "left"
-        android:background="#f2f3f9">
+        android:background="#fff8dc">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:background="#ef78c29b"
+            android:layout_height="150dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="120dp"
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/image_leftmenu"
-                    android:layout_width="50dp"
-                    android:layout_height="60dp"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
                     android:src="@drawable/tiktok"/>
                 <TextView
                     android:id="@+id/text_leftmenu"
@@ -123,7 +124,7 @@
             android:id="@+id/list_left_view_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="110dp">
+            android:layout_marginTop="160dp">
 
         </ListView>
 
@@ -131,9 +132,9 @@
     <RelativeLayout
         android:id="@+id/right_activity"
         android:layout_width="200dp"
-        android:layout_height="350dp"
+        android:layout_height="270dp"
         android:layout_gravity = "right"
-        android:background="#f2f3f9">
+        android:background="#fff8dc">
 
         <ListView
             android:id="@+id/list_right_view_message"

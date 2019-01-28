@@ -64,7 +64,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public class MessageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
          private final CircleImageView iv_avatar;
-         private final ImageView robot_notice;
+//         private final ImageView robot_notice;
          private final TextView tv_title;
          private  final TextView tv_description;
          private final TextView tv_time;
@@ -72,7 +72,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         public MessageViewHolder(View view){
             super(view);
             iv_avatar=view.findViewById(R.id.iv_avatar);
-            robot_notice=view.findViewById(R.id.robot_notice);
+//            robot_notice=view.findViewById(R.id.robot_notice);
             tv_title=view.findViewById(R.id.tv_title);
             tv_description=view.findViewById(R.id.tv_description);
             tv_time=view.findViewById(R.id.tv_time);
@@ -104,10 +104,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                 default: iv_avatar.setImageResource(R.drawable.icon_blacksend_touch);break;
             }
 
-            if(mMessages.get(position).isOfficial())
-                robot_notice.setVisibility(View.VISIBLE);
-            else
-                robot_notice.setVisibility(View.INVISIBLE);
+//            if(mMessages.get(position).isOfficial())
+//                robot_notice.setVisibility(View.VISIBLE);
+//            else
+//                robot_notice.setVisibility(View.INVISIBLE);
             tv_title.setText(mMessages.get(position).getTitle());
             tv_description.setText(mMessages.get(position).getDescription());
             tv_time.setText(mMessages.get(position).getTime());
