@@ -29,6 +29,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.zhaomingyang.tiktok.VideoPlayer.WZLPlayer;
 import com.example.zhaomingyang.tiktok.internet.network;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
 
     private MyAdapter mMyadapter;
 
-    private StandardGSYVideoPlayer c_Player;//当前正在播放的播放器
+    private WZLPlayer c_Player;//当前正在播放的播放器
 
 //  ImageView leftMenu;
     @SuppressLint("WrongViewCast")
@@ -108,9 +109,10 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
 
         try {
             mNetwork = new network(this);
-            mNetwork.fetchFeed();
             mMyadapter = new MyAdapter(mNetwork.getFeeds(), this);
             mVideo_List.setAdapter(mMyadapter);
+
+            mNetwork.fetchFeed();
             mVideo_List.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
                 private int lastCompletelyVisibleItemPosition;
@@ -140,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
                     View view = layoutManager.findViewByPosition(firstCompletelyVisibleItemPosition);
                     if(view!=null)
                     {
-                        StandardGSYVideoPlayer player = view.findViewById(R.id.video_player);
+                        WZLPlayer player = view.findViewById(R.id.video_player);
                         if(!player.isInPlayingState()) {
                             player.startPlayLogic();
                             c_Player = player;
