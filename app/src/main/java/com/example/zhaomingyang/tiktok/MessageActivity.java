@@ -41,6 +41,16 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
         setContentView(R.layout.activity_tips);
         mMessageListView=findViewById(R.id.rv_list);
 
+        //拍照页面跳转//
+        ImageView imageView = (ImageView)findViewById(R.id.iv_add_video_left);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MessageActivity.this,RecordVideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         tv_main = findViewById(R.id.tv_main);
         tv_main.setOnClickListener(new View.OnClickListener() {
             @Override
