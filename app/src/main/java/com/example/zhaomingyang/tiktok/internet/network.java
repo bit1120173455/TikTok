@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.zhaomingyang.tiktok.MainActivity;
 import com.example.zhaomingyang.tiktok.MyAdapter;
@@ -53,10 +54,14 @@ public class network {
                         Log.d(TAG , "get response!");
                         try{
                             feeds=response.body().getFeeds();
-                        }catch(Exception e){}
+                            ((MyAdapter)mActivity.getmVideo_List().getAdapter()).setmFeeds(feeds);
+                            mActivity.getmVideo_List().getAdapter().notifyDataSetChanged();
+                            Toast.makeText(mActivity, "feeds: " + feeds.size(), Toast.LENGTH_SHORT).show();
+                        }catch(Exception e){
+                            e.printStackTrace();
+                        }
                         //rv.getAdapter().refrush(DatabaseUtils.loadItemsFromDatabase());
-                        mActivity.getmVideo_List().getAdapter().notifyDataSetChanged();
-                    }
+                }
 
                     @Override
                     public void onFailure(Call<FeedResponse> call, Throwable t) {

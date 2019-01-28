@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -22,13 +23,11 @@ import java.util.zip.Inflater;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private static final String TAG="MyAdapter";
-    private int mNumberItems;
     private List<Feed> mFeeds;
     private static int viewHolderCount;
     private final ListItemClickListener mOnClickListener;
 
     public MyAdapter(List<Feed> feeds, ListItemClickListener listener) {
-        mNumberItems = feeds.size();
         viewHolderCount=0;
         mFeeds=feeds;
         mOnClickListener=listener;
@@ -59,17 +58,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return mNumberItems;
+        return mFeeds.size();//定义新变量的代价太大，需要实时维护，所以直接通过这个来返回
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final StandardGSYVideoPlayer mVideoPlayer;
+        private final TextView mTextView;
         //private final Button mButton;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mVideoPlayer = itemView.findViewById(R.id.video_player);
+            mTextView = itemView.findViewById(R.id.tv_info);
             //mButton = itemView.findViewById(R.id.btn_details);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,6 +99,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             Log.d(TAG,"Bind RecyclerView on " + Integer.toString(position) + " item.");
             String video_source = mFeeds.get(position).getVideo_url();
             String img_source = mFeeds.get(position).getImage_url();
+            String username = mFeeds.get(position).getUser_name();
+            String student_id = mFeeds.get(position).getStudent_id();
+
+            mTextView.setText(username+"\n"+student_id);
+
             mVideoPlayer.setUp(video_source,true,"视频");
             mVideoPlayer.setLooping(true);
             ImageView imageView = new ImageView(mVideoPlayer.getContext());
@@ -118,5 +124,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public interface ListItemClickListener {
         void onListItemClick(int clickedItemIndex);
+    }
+
+    public void setmFeeds(List<Feed> mFeeds) {
+        this.mFeeds = mFeeds;
     }
 }
