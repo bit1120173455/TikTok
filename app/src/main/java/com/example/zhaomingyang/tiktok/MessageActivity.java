@@ -41,6 +41,16 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
         setContentView(R.layout.activity_tips);
         mMessageListView=findViewById(R.id.rv_list);
 
+        //拍照页面跳转//
+        ImageView imageView = (ImageView)findViewById(R.id.iv_add_video_left);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MessageActivity.this,RecordVideoActivity.class);
+                startActivity(intent);
+            }
+        });
+
         tv_main = findViewById(R.id.tv_main);
         tv_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,28 +137,28 @@ public class MessageActivity extends AppCompatActivity implements MessageAdapter
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.robot,"我们", 1));
+        list.add(new ContentModel(R.drawable.people,"我们", 1));
 
-        list.add(new ContentModel(R.drawable.robot,"订阅", 2));
+        list.add(new ContentModel(R.drawable.love,"订阅", 2));
 
-        list.add(new ContentModel( R.drawable.robot,"收藏", 3));
+        list.add(new ContentModel( R.drawable.like,"收藏", 3));
 
-        list.add(new ContentModel(R.drawable.robot, "投票", 4));
+        list.add(new ContentModel(R.drawable.post, "转发", 4));
 
-        list.add(new ContentModel(R.drawable.robot, "历史", 4));
+        list.add(new ContentModel(R.drawable.history, "历史", 4));
 
     }
     public void initRightData() {
 
         list = new ArrayList<ContentModel>();
 
-        list.add(new ContentModel(R.drawable.robot, "我们", 1));
+        list.add(new ContentModel(R.drawable.people, "我们", 1));
 
-        list.add(new ContentModel( R.drawable.robot,"订阅", 2));
+        list.add(new ContentModel( R.drawable.love,"订阅", 2));
 
-        list.add(new ContentModel( R.drawable.robot,"收藏", 3));
+        list.add(new ContentModel( R.drawable.like,"收藏", 3));
 
-        list.add(new ContentModel(R.drawable.robot, "投票", 4));
+        list.add(new ContentModel(R.drawable.post, "转发", 4));
 
     }
 
