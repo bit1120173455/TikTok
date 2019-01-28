@@ -5,6 +5,9 @@ import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
+import com.example.zhaomingyang.tiktok.MainActivity;
+import com.example.zhaomingyang.tiktok.MyAdapter;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +26,21 @@ public class network {
     private static String BASE_URL="http://10.108.10.39:8080";
     private static String TAG=new String();
     private static List<Feed> feeds=new ArrayList<>();
-    private static String STUDENT_ID="1120173598";
+    private static String STUDENT_ID="1120173598,1120171220";
     private static String USER_NAME="ZGZ";
     private static String IMG_NAME="cover_image";
     private static String IMGUrl="url";
     private static String VIDEO_NAME="video";
     private static List<Feed> items=new ArrayList<>();
-    public static void fetchFeed(final RecyclerView rv){
+
+    private MainActivity mActivity;
+
+    public network(MainActivity mActivity) {
+        super();
+        this.mActivity = mActivity;
+    }
+
+    public void fetchFeed(){
         Retrofit retrofit =new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -40,8 +51,11 @@ public class network {
                     @Override
                     public void onResponse(Call<FeedResponse> call, Response<FeedResponse> response) {
                         Log.d(TAG , "get response!");
-                        feeds=response.body().getFeeds();
+                        try{
+                            feeds=response.body().getFeeds();
+                        }catch(Exception e){}
                         //rv.getAdapter().refrush(DatabaseUtils.loadItemsFromDatabase());
+                        mActivity.getmVideo_List().getAdapter().notifyDataSetChanged();
                     }
 
                     @Override
@@ -88,4 +102,9 @@ public class network {
         }
         );
     }
+
+    public static List<Feed> getFeeds() {
+        return feeds;
+    }
+
 }

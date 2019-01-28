@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.example.zhaomingyang.tiktok.internet.Feed;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
+import java.util.List;
 import java.util.zip.Inflater;
 
 
@@ -19,12 +23,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private static final String TAG="MyAdapter";
     private int mNumberItems;
+    private List<Feed> mFeeds;
     private static int viewHolderCount;
     private final ListItemClickListener mOnClickListener;
 
-    public MyAdapter(ListItemClickListener listener) {
-        mNumberItems = 5;
+    public MyAdapter(List<Feed> feeds, ListItemClickListener listener) {
+        mNumberItems = feeds.size();
         viewHolderCount=0;
+        mFeeds=feeds;
         mOnClickListener=listener;
         Log.d(TAG,"Created");
     }
@@ -88,11 +94,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
 
         public void bind(int position){
-            String source1 = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4";
-            mVideoPlayer.setUp(source1,true,"测试视频");
+            //String source1 = "http://9890.vod.myqcloud.com/9890_4e292f9a3dd011e6b4078980237cc3d3.f20.mp4";
+            Log.d(TAG,"Bind RecyclerView on " + Integer.toString(position) + " item.");
+            String video_source = mFeeds.get(position).getVideo_url();
+            String img_source = mFeeds.get(position).getImage_url();
+            mVideoPlayer.setUp(video_source,true,"视频");
+            mVideoPlayer.setLooping(true);
             ImageView imageView = new ImageView(mVideoPlayer.getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setImageResource(R.mipmap.xxx1);
+            imageView.setContentDescription("Video");
+            //使用Glide加载封面图
+            Glide.with(imageView.getContext()).setDefaultRequestOptions(
+                    new RequestOptions()
+                            .frame(3000000)
+                            .centerCrop()
+                            .error(R.mipmap.xxx2)
+                            .placeholder(R.mipmap.xxx1))
+                    .load(img_source).into(imageView);
             mVideoPlayer.setThumbImageView(imageView);
             //mVideoPlayer.setImageResource(R.mipmap.xxx1);
         }
@@ -100,6 +118,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public interface ListItemClickListener {
         void onListItemClick(int clickedItemIndex);
-        void onListButtonClick(int clickedItemIndex);
     }
 }
