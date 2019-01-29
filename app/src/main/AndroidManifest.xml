@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".MessageActivity" />
         <activity android:name=".RecordVideoActivity" />
+        <activity android:name=".history"/>
+        <activity android:name=".NoteActivity"/>
     </application>
 
 </manifest>

@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,RecordVideoActivity.class);
                 startActivity(intent);
-                finish();
+//                finish();
             }
         });
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, MessageActivity.class));
-                finish();
+//                finish();
             }
         });
 

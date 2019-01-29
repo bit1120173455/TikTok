@@ -116,8 +116,11 @@ public class ContentAdapter extends BaseAdapter {
                         builder.show();
                     break;
                     }
-                    default:{
-                        ;break;
+                    case 5 :{
+                        Intent intent = new Intent(context,history.class);
+                        context.startActivity(intent);
+ //                       context.startActivity(new Intent(ContentAdapter.this.context,history.class));
+                        break;
                     }
 
                 }
