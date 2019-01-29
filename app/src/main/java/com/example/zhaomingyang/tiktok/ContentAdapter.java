@@ -79,7 +79,7 @@ public class ContentAdapter extends BaseAdapter {
                     case 1: {
                         AlertDialog.Builder builder =  new AlertDialog.Builder(ContentAdapter.this.context);
                         builder.setTitle("个人信息");
-                        builder.setItems(new String[]{"赵明阳 1120173455", " 12 ", "詹亘泽 1120173598"}, null);
+                        builder.setItems(new String[]{"赵明阳 1120173455", "吴正良 1120171220", "詹亘泽 1120173598"}, null);
                         builder.setPositiveButton("确定", null);
                         builder.setNegativeButton("取消",null);
                         builder.show();
