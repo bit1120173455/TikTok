@@ -152,7 +152,6 @@ public class RecordVideoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_VIDEO_CAPTURE && resultCode == RESULT_OK) {
-            //todo 播放刚才录制的视频
             Uri videoUri = data.getData();
             videoView.setVideoURI(videoUri);
             videoView.start();
@@ -211,7 +210,7 @@ public class RecordVideoActivity extends AppCompatActivity {
 
     public void chooseImage() {
 
-        // TODO-C2 (4) Start Activity to select an image
+        //
 
         Intent intent = new Intent();
 
@@ -224,7 +223,7 @@ public class RecordVideoActivity extends AppCompatActivity {
     }
     public void chooseVideo() {
 
-        // TODO-C2 (5) Start Activity to select a video
+        //
 
         Intent intent = new Intent();
 
@@ -258,7 +257,7 @@ public class RecordVideoActivity extends AppCompatActivity {
 
 
 
-        // TODO-C2 (6) Send Request to post a video with its cover image
+        //
 
         Retrofit retrofit =new Retrofit.Builder()
 

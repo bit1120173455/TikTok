@@ -20,4 +20,8 @@ public class WZLPlayer extends StandardGSYVideoPlayer {
         super(context, attrs);
         mTopContainer.setAlpha(0);
     }
+
+    public String get_Video_url(){
+        return mOriginUrl;
+    }
 }

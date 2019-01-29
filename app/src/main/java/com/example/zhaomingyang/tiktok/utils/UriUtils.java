@@ -84,7 +84,6 @@ public class UriUtils {
 
                 }
 
-                // TODO handle non-primary volumes
 
             } else if (isDownloadsDocument(uri)) {
 

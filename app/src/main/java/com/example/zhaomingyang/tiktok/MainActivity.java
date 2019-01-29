@@ -36,6 +36,8 @@ import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.zhaomingyang.tiktok.NoteActivity.saveNote2Database;
+
 public class MainActivity extends AppCompatActivity implements MyAdapter.ListItemClickListener{
 
 //    ListView listView;
@@ -83,10 +85,6 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
 //                finish();
             }
         });
-
-
-
-
 
 
 
@@ -145,8 +143,10 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.ListIte
                     if(view!=null)
                     {
                         WZLPlayer player = view.findViewById(R.id.video_player);
+                        TextView info = view.findViewById(R.id.tv_info);
                         if(!player.isInPlayingState()) {
                             player.startPlayLogic();
+                            saveNote2Database(MainActivity.this,info.getText().toString());
                             c_Player = player;
                         }
                     }

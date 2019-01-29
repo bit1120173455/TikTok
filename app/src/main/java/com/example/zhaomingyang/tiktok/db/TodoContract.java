@@ -19,7 +19,7 @@ public final class TodoContract {
 
             " ( "+TodoEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT , " + TodoEntry.MESSAGE + " TEXT , "
 
-            +TodoEntry.TIME + " TEXT "+TodoEntry.STATE+" INTEGER )" ;
+            +TodoEntry.TIME + " TEXT, "+TodoEntry.STATE+" INTEGER )" ;
 
     static final String SQL_DELETE_TODOENTRIES = "DROP TABLE IF EXISTS "+TodoEntry.TABLE_NAME;
 

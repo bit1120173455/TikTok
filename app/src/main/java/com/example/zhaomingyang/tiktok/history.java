@@ -127,40 +127,40 @@ public class history extends AppCompatActivity {
 
 
 
-    @Override
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        return true;
-
-    }
-
-
-
-    @Override
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        switch (id) {
-
-            case R.id.action_settings:
-
-                return true;
-            default:
-
-                break;
-
-        }
+//    @Override
+//
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//
+//        return true;
+//
+//    }
 
 
 
-        return super.onOptionsItemSelected(item);
+//    @Override
+//
+//    public boolean onOptionsItemSelected(MenuItem item) {
 
-    }
+//        int id = item.getItemId();
+//
+//        switch (id) {
+//
+//            case R.id.action_settings:
+//
+//                return true;
+//            default:
+//
+//                break;
+//
+//        }
+//
+//
+//
+//        return super.onOptionsItemSelected(item);
+
+//    }
 
 
 

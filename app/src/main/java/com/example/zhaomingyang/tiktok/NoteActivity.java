@@ -100,7 +100,7 @@ public class NoteActivity extends AppCompatActivity {
 
                 }
 
-                boolean succeed = saveNote2Database(content.toString().trim());
+                boolean succeed = saveNote2Database(NoteActivity.this,content.toString().trim());
 
                 if (succeed) {
 
@@ -138,11 +138,10 @@ public class NoteActivity extends AppCompatActivity {
 
 
 
-    private boolean saveNote2Database(String content) {
+    public static boolean saveNote2Database( Activity activity,String content) {
 
-        // TODO 插入一条新数据，返回是否插入成功
 
-        TodoDbHelper mDbHelper = new TodoDbHelper(getBaseContext());
+        TodoDbHelper mDbHelper = new TodoDbHelper(activity.getBaseContext());
 
         SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
